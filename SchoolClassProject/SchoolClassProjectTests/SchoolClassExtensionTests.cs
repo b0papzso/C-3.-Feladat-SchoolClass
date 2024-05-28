@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SchoolClassProject;
 
 namespace SchoolClassProject.Tests
 {
@@ -17,8 +18,9 @@ namespace SchoolClassProject.Tests
             SchoolClassRepo repo = new SchoolClassRepo();
             List<SchoolClass> schoolClasses = new List<SchoolClass>
             {
-                new SchoolClass(9,"a", 5000,30),
-                new SchoolClass(9,"b", 5000,30)
+                new SchoolClass(9,'a', 5000,30),
+                new SchoolClass(9,'a', 5000,30),
+                new SchoolClass(9,'c', 5000,30)
             };
 
             string actual = repo.MostPayedSchoolClass(schoolClasses);
@@ -33,8 +35,8 @@ namespace SchoolClassProject.Tests
             SchoolClassRepo repo = new SchoolClassRepo();
             List<SchoolClass> schoolClasses = new List<SchoolClass>
             {
-                new SchoolClass(9,"a", 6000,30),
-                new SchoolClass(9,"b", 5000,30)
+                new SchoolClass(9,'a', 5000,30),
+                new SchoolClass(9,'a', 5000,30)
             };
 
             string actual = repo.MostPayedSchoolClass(schoolClasses);
@@ -49,8 +51,8 @@ namespace SchoolClassProject.Tests
             SchoolClassRepo repo = new SchoolClassRepo();
             List<SchoolClass> schoolClasses = new List<SchoolClass>
             {
-                new SchoolClass(9,"a", 5000,30),
-                new SchoolClass(9,"b", 5000,30)
+                new SchoolClass(9,'a', 5000,30),
+                new SchoolClass(9,'a', 5000,30)
             };
 
             string actual = repo.MostPayedSchoolClass(schoolClasses);
@@ -65,8 +67,8 @@ namespace SchoolClassProject.Tests
             SchoolClassRepo repo = new SchoolClassRepo();
             List<SchoolClass> schoolClasses = new List<SchoolClass>
             {
-                new SchoolClass(9,"a", 5000,30),
-                new SchoolClass(9,"b", 5000,30)
+                new SchoolClass(9,'a', 5000,30),
+                new SchoolClass(9,'a', 5000,30)
             };
 
             string actual = repo.MostPayedSchoolClass(schoolClasses);

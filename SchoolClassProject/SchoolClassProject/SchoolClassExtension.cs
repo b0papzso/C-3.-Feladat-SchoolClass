@@ -24,6 +24,5 @@ namespace SchoolClassProject
             }
             else { return $"{firstClass.SchoolYear}.{firstClass.ClassId} és {secondClass.SchoolYear}.{secondClass.ClassId} osztály tanulói ugyan annyit fizetnek osztálypénzbe! havonta."; }
         }
-
     }
 }

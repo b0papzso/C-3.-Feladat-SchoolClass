@@ -9,16 +9,16 @@ namespace SchoolClassProject.Repo
 {
     public class SchoolClassRepo
     {
-        public List<SchoolClass> SchoolClasses { get; set; }
+        
         public SchoolClassRepo()
         {
             SchoolClasses = new List<SchoolClass>
             {
-                new SchoolClass(9,"a", 5000,30),
-                new SchoolClass(9,"b", 6000,30)
+                new SchoolClass(9,'a', 5000,30),
+                new SchoolClass(9,'b', 6000,30)
             };
         }
-
+        public List<SchoolClass> SchoolClasses { get; set; }
         public string MostPayedSchoolClass(List<SchoolClass> schoolClasses)
         {
 

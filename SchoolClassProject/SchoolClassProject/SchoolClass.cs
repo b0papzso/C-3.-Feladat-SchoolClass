@@ -9,11 +9,11 @@ namespace SchoolClassProject
     public class SchoolClass
     {
         public int SchoolYear{get;set;}
-        public string ClassId { get;set;}
+        public char ClassId { get;set;}
         public int MonthlyPay { get;set;}
         public int StudentCount {  get;set;}
 
-        public SchoolClass(int schoolYear, string classId, int monthlyPay, int studentCount)
+        public SchoolClass(int schoolYear, char classId, int monthlyPay, int studentCount)
         {
             schoolYear = SchoolYear;
             classId = ClassId;
@@ -24,7 +24,7 @@ namespace SchoolClassProject
         public SchoolClass()
         {
             SchoolYear = 0;
-            ClassId = string.Empty;
+            ClassId = 'a';
             MonthlyPay = 0;
             StudentCount = 0;
         }
