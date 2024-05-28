@@ -25,9 +25,5 @@ namespace SchoolClassProject
             else { return $"{firstClass.SchoolYear}.{firstClass.ClassId} és {secondClass.SchoolYear}.{secondClass.ClassId} osztály tanulói ugyan annyit fizetnek osztálypénzbe! havonta."; }
         }
 
-        public static string MostPayedSchoolClass(this SchoolClass firstClass, SchoolClass secondclass)
-        {
-            return "";
-        }
     }
 }

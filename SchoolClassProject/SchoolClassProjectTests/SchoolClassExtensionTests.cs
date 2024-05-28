@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SchoolClassProject;
+using SchoolClassProject.Repo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,101 +14,65 @@ namespace SchoolClassProject.Tests
         [TestMethod()]
         public void MostPayedSchoolClassTestEqualPay()
         {
-            SchoolClass kilenca = new SchoolClass
+            SchoolClassRepo repo = new SchoolClassRepo();
+            List<SchoolClass> schoolClasses = new List<SchoolClass>
             {
-                SchoolYear = 9,
-                ClassId = "a",
-                MonthlyPay = 5000,
-                StudentCount = 30
+                new SchoolClass(9,"a", 5000,30),
+                new SchoolClass(9,"b", 5000,30)
             };
 
-            SchoolClass kilencb = new SchoolClass
-            {
-                SchoolYear = 9,
-                ClassId = "b",
-                MonthlyPay = 5000,
-                StudentCount = 30
-            };
+            string actual = repo.MostPayedSchoolClass(schoolClasses);
+            string expected = "Az összes osztály ugyanannyit fizet";
 
-            string actual = kilenca.MostPayedSchoolClass(kilencb);
-            string expected = "Egyenlő a két osztály";
-
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
         public void MostPayedSchoolClassTestFirstPaidMore()
         {
-            SchoolClass kilenca = new SchoolClass
+            SchoolClassRepo repo = new SchoolClassRepo();
+            List<SchoolClass> schoolClasses = new List<SchoolClass>
             {
-                SchoolYear = 9,
-                ClassId = "a",
-                MonthlyPay = 6000,
-                StudentCount = 30
+                new SchoolClass(9,"a", 6000,30),
+                new SchoolClass(9,"b", 5000,30)
             };
 
-            SchoolClass kilencb = new SchoolClass
-            {
-                SchoolYear = 9,
-                ClassId = "b",
-                MonthlyPay = 5000,
-                StudentCount = 30
-            };
+            string actual = repo.MostPayedSchoolClass(schoolClasses);
+            string expected = "9.a";
 
-            string actual = kilenca.MostPayedSchoolClass(kilencb);
-            string expected = "9.a többet fizettett";
-
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
         public void MostPayedSchoolClassTestsecondPaidMore()
         {
-            SchoolClass kilenca = new SchoolClass
+            SchoolClassRepo repo = new SchoolClassRepo();
+            List<SchoolClass> schoolClasses = new List<SchoolClass>
             {
-                SchoolYear = 9,
-                ClassId = "a",
-                MonthlyPay = 5000,
-                StudentCount = 30
+                new SchoolClass(9,"a", 5000,30),
+                new SchoolClass(9,"b", 5000,30)
             };
 
-            SchoolClass kilencb = new SchoolClass
-            {
-                SchoolYear = 9,
-                ClassId = "b",
-                MonthlyPay = 6000,
-                StudentCount = 30
-            };
+            string actual = repo.MostPayedSchoolClass(schoolClasses);
+            string expected = "9.b";
 
-            string actual = kilenca.MostPayedSchoolClass(kilencb);
-            string expected = "9.b többet fizetett";
-
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
         public void MostPayedSchoolClassTestBothNoPay()
         {
-            SchoolClass kilenca = new SchoolClass
+            SchoolClassRepo repo = new SchoolClassRepo();
+            List<SchoolClass> schoolClasses = new List<SchoolClass>
             {
-                SchoolYear = 9,
-                ClassId = "a",
-                MonthlyPay = 0,
-                StudentCount = 30
+                new SchoolClass(9,"a", 5000,30),
+                new SchoolClass(9,"b", 5000,30)
             };
 
-            SchoolClass kilencb = new SchoolClass
-            {
-                SchoolYear = 9,
-                ClassId = "b",
-                MonthlyPay = 0,
-                StudentCount = 30
-            };
+            string actual = repo.MostPayedSchoolClass(schoolClasses);
+            string expected = "Egyik osztály sem fizet osztálypénzt";
 
-            string actual = kilenca.MostPayedSchoolClass(kilencb);
-            string expected = "Egyik osztály sem fizet";
-
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
