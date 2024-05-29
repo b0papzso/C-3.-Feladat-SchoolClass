@@ -25,24 +25,24 @@ namespace SchoolClassProject.Repo
             string mostPaidClass = "";
             int maxPay = int.MinValue;
             int classCount = schoolClasses.Count;
-            int equalcount = 0;
+            int equalcount = 1;
             int noPayCount = 0;
             foreach (SchoolClass classes in schoolClasses)
-            {
-                if (classes.MonthlyPay == 0)
-                {
-                    noPayCount++;
-                }
-                if (classes.MonthlyPay == maxPay)
-                {
-                    equalcount++;
-                }
-                if (classes.MonthlyPay > maxPay)
-                {
-                    maxPay = classes.MonthlyPay;
-                    mostPaidClass = $"{classes.SchoolYear}.{classes.ClassId}";
-                }
-            }
+{
+    if (classes.MonthlyPay == 0)
+    {
+        noPayCount++;
+    }
+    else if (classes.MonthlyPay == maxPay)
+    {
+        equalcount++;
+    }
+    if (classes.MonthlyPay > maxPay)
+    {
+        maxPay = classes.MonthlyPay;
+        mostPaidClass = $"{classes.SchoolYear}.{classes.ClassId}";
+    }
+}
             if (noPayCount == classCount)
             {
                 mostPaidClass = "Egyik osztály sem fizet osztálypénzt";
