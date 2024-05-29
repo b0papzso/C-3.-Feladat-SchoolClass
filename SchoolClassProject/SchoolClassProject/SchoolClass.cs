@@ -15,10 +15,10 @@ namespace SchoolClassProject
 
         public SchoolClass(int schoolYear, char classId, int monthlyPay, int studentCount)
         {
-            schoolYear = SchoolYear;
-            classId = ClassId;
-            monthlyPay = MonthlyPay;
-            studentCount = StudentCount;
+            StudentCount = studentCount;
+            SchoolYear = schoolYear;
+            ClassId = classId;
+            MonthlyPay = monthlyPay;
         }
 
         public SchoolClass()
